@@ -1,0 +1,30 @@
+﻿@using MyAspNetCore.Controllers
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Product>;
+
+@foreach (var item in Model)
+{
+    <p>@item.Id - @item.Name</p>
+}
+@* buraya kadar view modeldi *@
+<p> @ViewBag.name</p>
+
+<h1>Index</h1>
+@{
+    var name = ViewBag.name;
+    <p>@name</p>
+}
+@name
+
+@*  viewbag kullandık *@
+<hr />
+<p> Yaş: @ViewData["age"]</p>  
+<h1> iSİMLER</h1>
+
+@foreach (var item in ViewData["names"] as List<string>)
+    {
+        <p> @item</p>
+    }
+@* viewdata kullandık *@
